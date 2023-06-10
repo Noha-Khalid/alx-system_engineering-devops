@@ -1,2 +1,4 @@
 #!/bin/bash
-chmod 755 hello
+mode=$(stat -c '%a' hello)
+mode=$((mode | 0111))
+chmod $mode hello
